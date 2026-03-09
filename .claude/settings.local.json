@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /home/ubuntu/DEMO/backend && python3 -m venv venv)",
+      "Bash(cd /home/ubuntu/DEMO/backend && source venv/bin/activate && pip install -r requirements.txt)",
+      "Bash(cd /home/ubuntu/DEMO/frontend && npm install)",
+      "Bash(tmux list-sessions 2>/dev/null || echo \"No tmux sessions\")",
+      "Bash(tmux capture-pane -t caption-frontend -p | tail -20)",
+      "Bash(lsof -iTCP:5173 -sTCP:LISTEN -n -P 2>/dev/null | grep -v COMMAND)",
+      "Bash(pwdx 64443 2>/dev/null || lsof -p 64443 2>/dev/null | grep cwd)"
+    ]
+  }
+}
